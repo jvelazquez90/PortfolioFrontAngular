@@ -1,0 +1,34 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "coordinates": [
+            13.438596,
+            52.519854
+          ],
+          "type": "Point"
+        },
+        "properties": {
+          "city": "Berlin",
+          "country": "Germany",
+          "name": "Berlin"
+        }
+      },{
+      "type": "Feature",
+        "geometry": {
+          "coordinates": [
+            61.195088,
+            54.005826
+          ],
+          "type": "Point"
+        },
+        "properties": {
+          "country": "Russia",
+          "name": "Berlin",
+          "postcode": "457130"
+        }
+      }
+    ]
+  }
