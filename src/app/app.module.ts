@@ -15,6 +15,8 @@ import { UbicacionComponent } from './componentes/ubicacion/ubicacion.component'
 import { RedesSocialesComponent } from './componentes/redes-sociales/redes-sociales.component';
 import { HttpClientModule} from '@angular/common/http';
 import { HeaderComponent } from './componentes/header/header.component';
+import { LoginComponent } from './login/login.component';
+import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-sesion.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { HeaderComponent } from './componentes/header/header.component';
     ProyectosComponent,
     UbicacionComponent,
     RedesSocialesComponent,
-    HeaderComponent
+    HeaderComponent,
+    LoginComponent,
+    IniciarSesionComponent
   ],
   imports: [
     BrowserModule,

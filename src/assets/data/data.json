@@ -1,34 +1,13 @@
 {
-    "type": "FeatureCollection",
-    "features": [
-      {
-        "type": "Feature",
-        "geometry": {
-          "coordinates": [
-            13.438596,
-            52.519854
-          ],
-          "type": "Point"
-        },
-        "properties": {
-          "city": "Berlin",
-          "country": "Germany",
-          "name": "Berlin"
-        }
-      },{
-      "type": "Feature",
-        "geometry": {
-          "coordinates": [
-            61.195088,
-            54.005826
-          ],
-          "type": "Point"
-        },
-        "properties": {
-          "country": "Russia",
-          "name": "Berlin",
-          "postcode": "457130"
-        }
-      }
-    ]
-  }
+  "id": 1,
+  "nombre": "Jorge Antonio",
+  "apellido": "Velazquez Fernandez",
+  "fechaNacimiento": 648874800000,
+  "nacionalidad": "Paraguaya",
+  "sexo": "1",
+  "lugarResidencia": "Moreno,Buenos Aires,Argentina",
+  "telefono": "+54 9 1160998785",
+  "foto": null,
+  "acercaDe": null,
+  "personaCol": null
+}
