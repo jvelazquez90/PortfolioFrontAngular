@@ -17,6 +17,8 @@ import { HttpClientModule} from '@angular/common/http';
 import { HeaderComponent } from './componentes/header/header.component';
 import { LoginComponent } from './login/login.component';
 import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-sesion.component';
+import { PortfolioComponent } from './componentes/portfolio/portfolio.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,12 +35,14 @@ import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-ses
     RedesSocialesComponent,
     HeaderComponent,
     LoginComponent,
-    IniciarSesionComponent
+    IniciarSesionComponent,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
