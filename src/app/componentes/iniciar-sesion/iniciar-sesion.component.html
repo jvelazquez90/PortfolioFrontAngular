@@ -1,6 +1,6 @@
 <h1 class="m-5"> Iniciar Sesión</h1>
 
-<form [formGroup]="form" class="m-5">
+<form [formGroup]="form" class="m-5" (ngSubmit)="onEnviar($event)">
 
     <!---------------------------------------- Email ---------------------------------------------------------->
     <div class="mb-3">
