@@ -15,7 +15,7 @@ export class EncabezadoComponent implements OnInit {
 
   ngOnInit(): void {
     this.datosPortfolio.ObtenerPersona().subscribe(data => {
-      console.log(data);
+      //console.log(data);
       this.miPortfolio = data;
     });
     // me suscribo al servicio
