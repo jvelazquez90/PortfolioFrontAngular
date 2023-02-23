@@ -12,10 +12,9 @@
         </div>
         <div class="alinear-texto">
             <ul>
-                <li>Detección del Derecho de construcción</li>
-                <li>Diseño e implementación de Base de Datos Geoespacial</li>
-                <li>Implementación de servidor de mosaicos personalizado</li>
-                <li>Instalación e implementación de geocodificador personalizado</li>
+                <li *ngFor="let proyecto of proyectos">
+                    <p> {{proyecto.nombreProyecto}} </p>
+                </li>
             </ul>
         </div>
     </div>
