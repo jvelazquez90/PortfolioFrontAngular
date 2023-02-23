@@ -15,7 +15,7 @@ export class ExperienciaComponent implements OnInit {
   ngOnInit(): void {
     this.datosExperiencia.ObtenerExperiencia().subscribe(data => {
       console.log(data);
-      this.experiencia = data;
+      this.experiencia = data.reverse(); // invierte el orden, quedando el actual arriba de todo
     });
   }
 

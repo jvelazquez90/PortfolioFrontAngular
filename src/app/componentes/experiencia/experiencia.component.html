@@ -11,46 +11,19 @@
                 <button type="button" class="btn btn-primary boton-editar" onclick="CambiarParrafo()"> Editar</button>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-6 p-3">
-                <ul>
-                    <li>
-                        <p> {{experiencia[2].cargo}} </p>
-                        <p> Junio 2016 hasta la actualidad </p>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-sm-6 p-3">
-                <img src="assets/unigis.jpg" class="logo-unigis float-start" alt="logo unigis">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6 p-3">
-                <ul>
-                    <li>
-                        <p> Municipalidad del Pilar</p>
-                        <p> {{experiencia[1].cargo}} </p>
-                        <p> Abril 2013 - Mayo 2016 </p>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-sm-6 p-3">
-                <img src="assets/pilar.jpg" class="logo-pilar float-start" alt="logo municipalidad">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6 p-3">
-                <ul>
-                    <li>
-                        <p> Universidad Nacional General Sarmiento</p>
-                        <p> {{experiencia[0].cargo}} </p>
-                        <p> Año 2015 </p>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-sm-6 p-3">
-                <img src="assets/logo-ungs.png" class="logo-ungs float-start" alt="logo ungs">
-            </div>
-        </div>
+        <ul>
+            <li *ngFor="let exp of experiencia">
+                <div class="row">
+                    <div class="col-sm-6 p-3">
+                        <p> {{exp.nombreEmpresa}} </p>
+                        <p> {{exp.cargo}} </p>
+                        <p> {{exp.fechaIngreso}} </p>
+                    </div>
+                    <div class="col-sm-6 p-3">
+                        <img [src]="exp.imagen" class="logo-unigis float-start">
+                    </div>
+                </div>
+            </li>
+        </ul>
     </div>
 </article>
