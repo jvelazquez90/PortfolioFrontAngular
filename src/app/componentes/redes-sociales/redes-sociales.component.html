@@ -1,14 +1,8 @@
 <footer>
     <h2>Redes Sociales</h2>
     <ul>
-        <li>
-            <a href="https://linkedin.com/in/jorge-velazquez-fernandez" class="fa fa-linkedin"></a>
-        </li>
-        <li>
-            <a href="https://www.facebook.com/jorgevelazquezcarp" class="fa fa-facebook"></a>
-        </li>
-        <li>
-            <a href="https://instagram.com/jvelazquez_90" class="fa fa-instagram"></a>
+        <li *ngFor="let red of redesSociales">
+            <a href="{{red.link}}"><img src='{{red.imagen}}' class="redes-sociales"> </a>
         </li>
     </ul>
     <h4> Copyright - Todos los derechos reservados </h4>
