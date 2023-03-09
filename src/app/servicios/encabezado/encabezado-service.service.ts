@@ -9,11 +9,11 @@ import { map } from 'rxjs/operators';
 })
 export class EncabezadoServiceService {
 
-  url = "http://localhost:8080/personas/obtener/1";
+  url = "http://localhost:8080/personas/";
 
   constructor( private httpClient:HttpClient ) {}
 
   ObtenerPersona():Observable<any>{
-    return this.httpClient.get(this.url);
+    return this.httpClient.get(this.url + "obtener/" + "1");
   }
 }

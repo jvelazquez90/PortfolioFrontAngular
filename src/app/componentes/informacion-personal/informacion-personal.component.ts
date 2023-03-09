@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { EncabezadoServiceService } from 'src/app/servicios/encabezado/encabezado-service.service';
 import { EmailServiceService } from 'src/app/servicios/email/email-service.service';
 
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-informacion-personal',
   templateUrl: './informacion-personal.component.html',
@@ -13,7 +15,8 @@ export class InformacionPersonalComponent implements OnInit {
   email:any;
 
   constructor(private datosPortfolio:EncabezadoServiceService,
-              private emailPortfolio:EmailServiceService) { }
+              private emailPortfolio:EmailServiceService,
+              public editarPersona: FormBuilder) { }
 
   ngOnInit(): void {
     this.datosPortfolio.ObtenerPersona().subscribe(data => {
@@ -24,7 +27,6 @@ export class InformacionPersonalComponent implements OnInit {
     this.emailPortfolio.ObtenerEmail().subscribe(data => {
       this.email = data;
     });
-    // me suscribo al servicio
+    
   }
-
 }
