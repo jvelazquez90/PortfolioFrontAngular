@@ -12,7 +12,7 @@
         </div>
         <div class="alinear-texto">
             <div class="progress" *ngFor="let habilidad of habilidades">
-                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{habilidad.nombre}}</div>
+                <div class="progress-bar" [ngStyle]="{width: habilidad.porcentaje}">{{habilidad.nombre}}</div>
                 <br>
             </div>
         </div>
