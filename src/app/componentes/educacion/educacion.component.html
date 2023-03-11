@@ -7,13 +7,26 @@
             </div>
             <div class="col-sm-4"></div>
             <div class="col-sm-4 alinear-texto">
-                <button type="button" class="btn btn-primary boton-editar" onclick="CambiarParrafo()"> Editar</button>
+                <button type="button" class="btn btn-success boton-editar" onclick="CambiarParrafo()"> Agregar</button>
             </div>
         </div>
-        <div class="alinear-texto">
+        <div class="alinear-texto" *ngIf="educacion">
             <ul>
-                <li *ngFor="let edu of educacion">
-                    <p> {{edu.nombreInstitucion}} </p>
+                <li *ngFor="let edu of educacion" (EliminarEducacion)="eliminarEducacion(edu)">
+                    <p> {{edu.nombreInstitucion}} 
+                        <button type="button" 
+                            class="btn btn-danger btn-sm"
+                            style="float: right;"
+                            (click)="eliminarEducacion(edu)"> 
+                            Borrar
+                        </button>
+                        <button type="button" 
+                            class="btn btn-primary btn-sm"
+                            style="float: right;"
+                            (click)="editarEducacion(edu)"> 
+                            Editar
+                        </button>
+                    </p>
                 </li>
             </ul>
         </div>

@@ -7,11 +7,29 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class EducacionService {
-  url = "http://localhost:8080/educacion/get";
+  url = "http://localhost:8080/educacion";
+  //urlBorrar = "http://localhost:8080/educacion/borrar/";
 
   constructor( private httpClient:HttpClient ) { }
 
   ObtenerEducacion():Observable<any>{
-    return this.httpClient.get(this.url);
+    return this.httpClient.get(this.url + "/get");
+  }
+  //-------------------------------------------------------------------------------------------------
+  // A VER SI FUNCIONA
+  create(educacion: any): Observable<any>{
+    return this.httpClient.post(this.url + '/crear',educacion);
+  }
+
+  getAll(id: number): Observable<any>{
+    return this.httpClient.get(this.url + '/' + id);
+  }
+
+  update(educacion: any): Observable<any>{
+    return this.httpClient.put(this.url,educacion);
+  }
+
+  delete(id: number): Observable<any>{
+    return this.httpClient.delete(this.url + '/borrar/' + id);
   }
 }
