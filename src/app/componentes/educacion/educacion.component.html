@@ -12,7 +12,7 @@
         </div>
         <div class="alinear-texto" *ngIf="educacion">
             <ul>
-                <li *ngFor="let edu of educacion" (EliminarEducacion)="eliminarEducacion(edu)">
+                <li *ngFor="let edu of educacion">
                     <p> {{edu.nombreInstitucion}} 
                         <button type="button" 
                             class="btn btn-danger btn-sm"

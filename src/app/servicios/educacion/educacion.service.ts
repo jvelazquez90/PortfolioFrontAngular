@@ -12,24 +12,25 @@ export class EducacionService {
 
   constructor( private httpClient:HttpClient ) { }
 
+  //----------------------------------------------------------------------------------------
+
   ObtenerEducacion():Observable<any>{
     return this.httpClient.get(this.url + "/get");
   }
-  //-------------------------------------------------------------------------------------------------
-  // A VER SI FUNCIONA
-  create(educacion: any): Observable<any>{
-    return this.httpClient.post(this.url + '/crear',educacion);
+ 
+  crearEducacion(educacion: any): Observable<any>{
+    return this.httpClient.post(this.url + '/crear/',educacion);
   }
 
-  getAll(id: number): Observable<any>{
-    return this.httpClient.get(this.url + '/' + id);
+  obtenerEducacionId(id: number): Observable<any>{
+    return this.httpClient.get(this.url + '/obtener/' + id);
   }
 
-  update(educacion: any): Observable<any>{
-    return this.httpClient.put(this.url,educacion);
+  editarEducacion(educacion: any): Observable<any>{
+    return this.httpClient.put(this.url + '/editar/',educacion);
   }
 
-  delete(id: number): Observable<any>{
+  eliminarEducacion(id: number): Observable<any>{
     return this.httpClient.delete(this.url + '/borrar/' + id);
   }
 }

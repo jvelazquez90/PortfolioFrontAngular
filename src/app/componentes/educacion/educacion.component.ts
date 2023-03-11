@@ -20,27 +20,29 @@ export class EducacionComponent implements OnInit {
     });
   }
 
+  ObtenerEducacion(){
+    this.datosEducacion.ObtenerEducacion().subscribe(data => {
+      //console.log(data);
+      this.educacion = data;
+    });
+  }
+
   create():void{
-    this.datosEducacion.create(this.nuevaEducacion).subscribe(data => {
+    this.datosEducacion.editarEducacion(this.nuevaEducacion).subscribe(data => {
       this.datosEducacion = data;
     });
   }
 
     editarEducacion(edu:any):void{
       //console.log(edu);
-      this.datosEducacion.update(edu.id).subscribe(data => this.datosEducacion = data);
+      this.datosEducacion.editarEducacion(edu.id).subscribe(data => this.datosEducacion = data);
     }
 
     eliminarEducacion(edu:any):void{
       if(confirm('Seguro que desea Eliminar este elemento?')){
-        this.datosEducacion.delete(edu.id).subscribe((data) => {
-          this.datosEducacion.ObtenerEducacion();
+        this.datosEducacion.eliminarEducacion(edu.id).subscribe((data) => {
+          this.ObtenerEducacion();
         }), (error:any) => {console.log(error)};
       }
     }
-
-    ngOnDestroy() {
-      this.educacion.unsubscribe();
-    }
-
 }
