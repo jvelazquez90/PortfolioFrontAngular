@@ -27,15 +27,15 @@ export class EducacionComponent implements OnInit {
     });
   }
 
-  create():void{
+  agregarEducacion():void{
     this.datosEducacion.editarEducacion(this.nuevaEducacion).subscribe(data => {
       this.datosEducacion = data;
     });
   }
 
     editarEducacion(edu:any):void{
-      //console.log(edu);
-      this.datosEducacion.editarEducacion(edu.id).subscribe(data => this.datosEducacion = data);
+      console.log(edu);
+      //this.datosEducacion.editarEducacion(edu.id).subscribe(data => this.datosEducacion = data);
     }
 
     eliminarEducacion(edu:any):void{

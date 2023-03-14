@@ -8,7 +8,6 @@ import { map } from 'rxjs/operators';
 })
 export class EducacionService {
   url = "http://localhost:8080/educacion";
-  //urlBorrar = "http://localhost:8080/educacion/borrar/";
 
   constructor( private httpClient:HttpClient ) { }
 
