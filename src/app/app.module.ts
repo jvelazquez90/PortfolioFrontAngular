@@ -19,6 +19,7 @@ import { LoginComponent } from './login/login.component';
 import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-sesion.component';
 import { PortfolioComponent } from './componentes/portfolio/portfolio.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AgregarEducacionComponent } from './componentes/educacion/agregar-educacion/agregar-educacion.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     LoginComponent,
     IniciarSesionComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    AgregarEducacionComponent
   ],
   imports: [
     BrowserModule,
