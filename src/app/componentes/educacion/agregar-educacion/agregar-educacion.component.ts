@@ -10,29 +10,27 @@ import { EducacionService } from 'src/app/servicios/educacion/educacion.service'
   styleUrls: ['./agregar-educacion.component.css']
 })
 export class AgregarEducacionComponent implements OnInit {
-
-  // creo mi grupo formulario con los datos recibidos y validados
+  
+    nombreInstitucion:string = '';
+    fechaIngreso:Date = new Date();
+    fechaEgreso: Date = new Date();
+    lugar: string = '';
+  
   /*
-  formEducacion = new FormGroup({
-    'nombreInstitucion': new FormControl('', Validators.required),
-    'fechaIngreso': new FormControl('', Validators.required),
-    'fechaEgreso': new FormControl('', Validators.required),
-    'lugar': new FormControl('', Validators.required)
-  });
-  */
-
   formEducacion = this.formBuilder.group({
     'nombreInstitucion': ['', Validators.required],
     'fechaIngreso': ['', Validators.required],
     'fechaEgreso': ['', Validators.required],
     'lugar': ['', Validators.required]
  });
+  */
 
   constructor(private educacionService:EducacionService, private router:Router, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
   }
- 
+  
+  /*
   crear():void{
     this.educacionService.crearEducacion(this.formEducacion.value).subscribe(data => {
       this.router.navigate(['portfolio']);
@@ -42,9 +40,14 @@ export class AgregarEducacionComponent implements OnInit {
     }
     )
   }
-
-  procesar(){
-    console.log(this.formEducacion.value);
+  */
+  crear(): void {
+    const educacion = new Educacion(this.nombreInstitucion,this.fechaIngreso,this.fechaEgreso,this.lugar);
+    this.educacionService.crearEducacion(educacion).subscribe(data => {
+      this.router.navigate(['portfolio']);
+      alert('Educación guardada');
+    },(error)=>{
+      alert('Error al guardar');
+    })
   }
-
 }

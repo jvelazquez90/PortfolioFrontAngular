@@ -7,7 +7,7 @@
             </div>
             <div class="col-sm-4"></div>
             <div class="col-sm-4 alinear-texto">
-                <a class="btn btn-primary" href="agregarEducacion"> Agregar </a>
+                <a class="btn btn-success boton-agregar" href="agregarEducacion"> Agregar </a>
             </div>
         </div>
         <div class="alinear-texto" *ngIf="educacion">
@@ -15,13 +15,13 @@
                 <li *ngFor="let edu of educacion">
                     <p> {{edu.nombreInstitucion}} 
                         <button type="button" 
-                            class="btn btn-danger btn-sm"
+                            class="btn btn-danger btn-sm boton-borrar"
                             style="float: right;"
                             (click)="eliminarEducacion(edu)"> 
                             Borrar
                         </button>
                         <button type="button" 
-                            class="btn btn-primary btn-sm"
+                            class="btn btn-primary btn-sm boton-editar"
                             style="float: right;"
                             (click)="editarEducacion(edu)"> 
                             Editar
