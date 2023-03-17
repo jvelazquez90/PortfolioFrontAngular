@@ -21,6 +21,11 @@ import { PortfolioComponent } from './componentes/portfolio/portfolio.component'
 import { ReactiveFormsModule } from '@angular/forms';
 import { AgregarEducacionComponent } from './componentes/educacion/agregar-educacion/agregar-educacion.component';
 
+import { FormsModule } from '@angular/forms';
+
+// para graficos circulares
+import { NgCircleProgressModule } from 'ng-circle-progress';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +49,11 @@ import { AgregarEducacionComponent } from './componentes/educacion/agregar-educa
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+
+    // importo para el grafico
+    NgCircleProgressModule.forRoot({})
   ],
   providers: [],
   bootstrap: [AppComponent]
