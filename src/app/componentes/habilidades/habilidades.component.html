@@ -5,15 +5,21 @@
             <div class="col-sm-4 alinear-texto">
                 <h2> Habilidades </h2>
             </div>
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4 alinear-texto">
-                <button type="button" class="btn btn-primary boton-editar" onclick="CambiarParrafo()"> Editar</button>
-            </div>
-        </div>
-        <div class="alinear-texto">
-            <div class="progress" *ngFor="let habilidad of habilidades">
-                <div class="progress-bar" [ngStyle]="{width: habilidad.porcentaje}">{{habilidad.nombre}}</div>
-                <br>
+            <div>
+                <circle-progress *ngFor="let hab of habilidades"
+                    [percent]=hab.porcentaje
+                    [radius]="100"
+                    [title]="hab.nombre"
+                    [titleFontSize]="'14px'"
+                    [units]="''"
+                    [outerStrokeWidth]="16"
+                    [innerStrokeWidth]="8"
+                    [outerStrokeColor]="'#78C000'"
+                    [innerStrokeColor]="'#C7E596'"
+                    [animation]="true"
+                    [animationDuration]="300"
+                >
+                </circle-progress>
             </div>
         </div>
     </div>
