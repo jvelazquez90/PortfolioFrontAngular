@@ -145,7 +145,19 @@ header-a-probar{
   }
 
   .boton-editar{
-    margin-right: 50px;
+    margin-right: 10px;
+    float: right;
+    margin-top: 5px;
+  }
+
+  .boton-borrar{
+    margin-right: 10px;
+    float: right;
+    margin-top: 5px;
+  }
+
+  .boton-agregar{
+    margin-right: 40px;
     float: right;
     margin-top: 5px;
   }
