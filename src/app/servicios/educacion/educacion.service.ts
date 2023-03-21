@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'; // agregado
 import { BehaviorSubject, Observable } from 'rxjs'; // se agrega para que la aplicacion no quede en la espera del servicio
 import { map } from 'rxjs/operators';
+import { Educacion } from 'src/app/model/educacion';
 
 @Injectable({
   providedIn: 'root'
@@ -25,8 +26,8 @@ export class EducacionService {
     return this.httpClient.get(this.url + '/obtener/' + id);
   }
 
-  editarEducacion(educacion: any): Observable<any>{
-    return this.httpClient.put(this.url + '/editar/',educacion);
+  editarEducacion(educacion: Educacion): Observable<any>{
+    return this.httpClient.put(this.url + '/editar/' + educacion.id, educacion);
   }
 
   eliminarEducacion(id: number): Observable<any>{

@@ -20,12 +20,11 @@
                             (click)="eliminarEducacion(edu)"> 
                             Borrar
                         </button>
-                        <button type="button" 
-                            class="btn btn-primary btn-sm boton-editar"
-                            style="float: right;"
-                            (click)="editarEducacion(edu)"> 
-                            Editar
-                        </button>
+                        <a  class="btn btn-primary btn-sm boton-editar" 
+                            style="float: right;" h
+                            [routerLink]="['editarEducacion',edu.id]">
+                             Editar 
+                        </a>
                     </p>
                 </li>
             </ul>

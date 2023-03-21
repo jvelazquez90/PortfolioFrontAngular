@@ -33,10 +33,8 @@ export class EducacionComponent implements OnInit {
     });
   }
 
-    editarEducacion(edu:any):void{
-      console.log(edu);
-      //this.datosEducacion.editarEducacion(edu.id).subscribe(data => this.datosEducacion = data);
-    }
+  editarEducacion(edu:any):void{
+  }
 
     eliminarEducacion(edu:any):void{
       if(confirm('Seguro que desea Eliminar este elemento?')){

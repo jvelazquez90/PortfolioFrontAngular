@@ -1,9 +1,10 @@
 export class Educacion {
     id?: number;
-    nombreInstitucion: string
-    fechaIngreso: Date
-    fechaEgreso: Date
-    lugar: string
+    nombreInstitucion:string = '';
+    fechaIngreso:Date = new Date();
+    fechaEgreso: Date = new Date();
+    lugar: string = '';
+    
 
     
     constructor(nombreInstitucion:string, fechaIngreso:Date, fechaEgreso:Date,lugar:string){
@@ -12,5 +13,4 @@ export class Educacion {
         this.fechaEgreso = fechaEgreso;
         this.lugar = lugar;
     }
-    
 }
