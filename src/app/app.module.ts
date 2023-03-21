@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,11 +21,21 @@ import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-ses
 import { PortfolioComponent } from './componentes/portfolio/portfolio.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AgregarEducacionComponent } from './componentes/educacion/agregar-educacion/agregar-educacion.component';
+import { EditarEducacionComponent } from './componentes/educacion/editar-educacion/editar-educacion.component';
 
 import { FormsModule } from '@angular/forms';
 
 // para graficos circulares
 import { NgCircleProgressModule } from 'ng-circle-progress';
+
+const routes: Routes = [
+  {path: 'portfolio', component: PortfolioComponent},
+  {path: 'iniciar-sesion', component: IniciarSesionComponent},
+  {path: '', redirectTo: 'iniciar-sesion', pathMatch: 'full'}, // lo que va a hacer es evaluar la ruta especificada
+  {path: 'agregarEducacion', component: AgregarEducacionComponent},
+  {path: 'portfolio/editarEducacion/:id', component: EditarEducacionComponent},
+  {path: 'educacion', component: EducacionComponent}
+];
 
 @NgModule({
   declarations: [
@@ -43,7 +54,8 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     LoginComponent,
     IniciarSesionComponent,
     PortfolioComponent,
-    AgregarEducacionComponent
+    AgregarEducacionComponent,
+    EditarEducacionComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +63,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    RouterModule.forRoot(routes),
 
     // importo para el grafico
     NgCircleProgressModule.forRoot({})
