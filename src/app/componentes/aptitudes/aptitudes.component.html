@@ -10,29 +10,10 @@
                 <button type="button" class="btn btn-primary boton-editar" onclick="CambiarParrafo()"> Editar</button>
             </div>
         </div>
-        <div class="alinear-texto">
-            <h4> Herramientas</h4>
+        <div class="alinear-texto" *ngFor="let aptitud of aptitudes">
+            <h4> {{aptitud.clasificacion}}</h4>
             <ul>
-                <li>QGIS</li>
-                <li>Base de Datos Postgresql/Postgis</li>
-                <li>ArcGIS</li>
-                <li>Herramientas OpenStreetMap</li>
-                <li>GDAL/OGR</li>
-                <li>Leaflet</li>
-                <li>OSRM</li>
-                <li>Graphhopper</li>
-            </ul>
-            <h4>Lenguajes utilizados</h4>
-            <ul>
-                <li>SQL</li>
-                <li>Python</li>
-                <li>Java</li>
-            </ul>
-            <h4>Sistemas Operativos</h4>
-            <ul>
-                <li>Windows</li>
-                <li>Ubuntu</li>
-                <li>Ubuntu Server</li>
+                <li>{{aptitud.nombre}}</li>
             </ul>
         </div>
     </div>
