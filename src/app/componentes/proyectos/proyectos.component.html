@@ -7,13 +7,28 @@
             </div>
             <div class="col-sm-4"></div>
             <div class="col-sm-4 alinear-texto">
-                <button type="button" class="btn btn-primary boton-editar" onclick="CambiarParrafo()"> Editar</button>
+                <a class="btn btn-success boton-agregar" href="agregarProyecto"> Agregar </a>
             </div>
         </div>
         <div class="alinear-texto">
             <ul>
                 <li *ngFor="let proyecto of proyectos">
-                    <p> {{proyecto.nombreProyecto}} </p>
+                    <p> {{proyecto.nombreProyecto}} 
+                        <button 
+                            type="button" 
+                            class="btn btn-danger btn-sm boton-borrar"
+                            style="float: right;"
+                            (click)="eliminarProyecto(proyecto)"
+                            > 
+                            Borrar
+                        </button>
+                        <a  class="btn btn-primary btn-sm boton-editar" 
+                            style="float: right;"
+                            [routerLink]="['editarProyecto', proyecto.id]"
+                            >
+                             Editar 
+                        </a>
+                    </p>
                 </li>
             </ul>
         </div>
