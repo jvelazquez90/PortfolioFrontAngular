@@ -9,13 +9,37 @@ import { HabilidadesService } from 'src/app/servicios/habilidades/habilidades.se
 export class HabilidadesComponent implements OnInit {
 
   habilidades:any;
+  nuevaHabilidad:any;
 
-  constructor( private habilidadesService:HabilidadesService ) { }
+  constructor( private datosHabilidades:HabilidadesService ) { }
 
   ngOnInit(): void {
-    this.habilidadesService.ObtenerHabilidades().subscribe(data => {
+    this.datosHabilidades.ObtenerHabilidades().subscribe(data => {
       this.habilidades = data;
     });
   }
 
+  /*--------------------------------------------------------------------------------------*/
+  ObtenerHabilidad(){
+    this.datosHabilidades.ObtenerHabilidadesS().subscribe(data => {
+      //console.log(data);
+      this.habilidades = data;
+    });
+  }
+
+  /*--------------------------------------------------------------------------------------*/
+  agregarHabilidad():void{
+    this.datosHabilidades.editarHabilidadesS(this.nuevaHabilidad).subscribe(data => {
+      this.datosHabilidades = data;
+    });
+  }
+
+  /*--------------------------------------------------------------------------------------*/
+  eliminarHabilidad(hab:any):void{
+    if(confirm('Seguro que desea Eliminar este elemento?')){
+      this.datosHabilidades.eliminarHabilidadesS(hab.id).subscribe((data) => {
+        this.ObtenerHabilidad();
+      }), (error:any) => {console.log(error)};
+    }
+  }
 }

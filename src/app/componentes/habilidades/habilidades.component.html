@@ -6,7 +6,15 @@
                 <h2> Habilidades </h2>
             </div>
             <div>
-                <circle-progress *ngFor="let hab of habilidades"
+                <a class="col-sm-1 botones-en-linea alinear-texto btn btn-success btn-sm boton-editar"
+                style="float: right;" 
+                href="agregarHabilidad">
+                    Agregar 
+                </a>
+            </div>
+            <div *ngFor="let hab of habilidades">
+                <div>
+                    <circle-progress style="float:left"
                     [percent]=hab.porcentaje
                     [radius]="100"
                     [title]="hab.nombre"
@@ -20,6 +28,20 @@
                     [animationDuration]="300"
                 >
                 </circle-progress>
+                </div>
+                
+                <button type="button" 
+                        class="col-sm-1 botones-en-linea alinear-texto btn btn-danger btn-sm boton-borrar"
+                        style="float: right;"
+                        (click)="eliminarHabilidad(hab)"
+                        >
+                        Borrar
+                </button>
+                <a  class="col-sm-1 botones-en-linea alinear-texto btn btn-primary btn-sm boton-editar" 
+                        style="float: right;"
+                        [routerLink]="['editarHabilidad',hab.id]">
+                        Editar 
+                </a>
             </div>
         </div>
     </div>
