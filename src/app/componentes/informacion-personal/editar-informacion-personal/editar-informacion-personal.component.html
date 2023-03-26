@@ -1,0 +1,26 @@
+<h1> Editar Información Personal </h1>
+<form (ngSubmit)="editarDatos()">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="fechaNacimientoInformacion">Fecha de Nacimiento</label>
+            <input type="date" [(ngModel)]="persona.fechaNacimiento"  class="form-control" id="fechaNacimientoInformacion" name="fechaNacimientoInformacion">
+          </div>
+        <div class="form-group col-md-6">
+            <label for="nacionalidadInformacion">Nacionalidad</label>
+            <input type="string" [(ngModel)]="persona.nacionalidad" class="form-control" id="nacionalidadInformacion" name="nacionalidadInformacion">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="emailEmail">Email</label>
+            <input type="string" [(ngModel)]="email.email" class="form-control" id="emailEmail" name="emailEmail">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="residenciaInformacion">Lugar de Residencia</label>
+            <input type="string" [(ngModel)]="persona.lugarResidencia" class="form-control" id="residenciaInformacion" name="residenciaInformacion">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="telefonoInformacion">Telefono</label>
+            <input type="string" [(ngModel)]="persona.telefono" class="form-control" id="telefonoInformacion" name="telefonoInformacion">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Editar</button>
+</form>
