@@ -15,23 +15,23 @@ export class AptitudesService {
 
   //----------------------------------------------------------------------------------------
 
-  ObtenerAptitudes():Observable<any>{
+  ObtenerAptitudesS():Observable<any>{
     return this.httpClient.get(this.url + "/get");
   }
  
-  crearAptitudes(aptitud: any): Observable<any>{
+  crearAptitudesS(aptitud: any): Observable<any>{
     return this.httpClient.post(this.url + '/crear/',aptitud);
   }
 
-  obtenerAptitudesId(id: number): Observable<any>{
+  obtenerAptitudesIdS(id: number): Observable<any>{
     return this.httpClient.get(this.url + '/obtener/' + id);
   }
 
-  editarAptitudes(aptitud: Aptitudes): Observable<any>{
+  editarAptitudesS(aptitud: Aptitudes): Observable<any>{
     return this.httpClient.put(this.url + '/editar/' + aptitud.id, aptitud);
   }
 
-  eliminarAptitudes(id: number): Observable<any>{
+  eliminarAptitudesS(id: number): Observable<any>{
     return this.httpClient.delete(this.url + '/borrar/' + id);
   }
 }

@@ -10,39 +10,72 @@ import { AptitudesService } from 'src/app/servicios/aptitudes/aptitudes.service'
 export class AptitudesComponent implements OnInit {
 
   aptitudes: any;
-
+  nuevaAptitud: any;
 
   nombre:string = '';
   clasificacion:string = '';
 
-  aptitudess: Aptitudes = new Aptitudes(this.nombre, this.clasificacion);
-
-  relacion: Map<string, string> = new Map<string, string>();
-  clasificaciones: Array<string> = [];
+  herramientas: Array<any> = [];
+  lenguajes: Array<any> = [];
+  sistemaOperativo: Array<any> = [];
 
   constructor( private aptitudService: AptitudesService) { }
 
   ngOnInit(): void {
-    this.cargarDatos();
-    console.log(this.aptitudes);
+    this.aptitudService.ObtenerAptitudesS().subscribe(data => {
+      this.aptitudes = data;
+      for(let i = 0; i < this.aptitudes.length; i++) {
+        if(this.aptitudes[i].clasificacion === 'HERRAMIENTAS'){
+          this.herramientas.push(this.aptitudes[i]);
+        }
+        else if(this.aptitudes[i].clasificacion === 'LENGUAJES'){
+          this.lenguajes.push(this.aptitudes[i]);
+        }
+        else if(this.aptitudes[i].clasificacion === 'SISTEMAS OPERATIVOS'){
+          this.sistemaOperativo.push(this.aptitudes[i]);
+        }
+      }
+    });
   }
 
-  cargarDatos(): void {
-    const aptitudess: Aptitudes = new Aptitudes(this.nombre,this.clasificacion);
-    this.aptitudService.ObtenerAptitudes().subscribe(data => {
+  /*--------------------------------------------------------------------------------------*/
+  clasificarAptitudes(){
+    this.aptitudService.ObtenerAptitudesS().subscribe(data => {
+      this.aptitudes = data;
+      for(let i = 0; i < this.aptitudes.length; i++) {
+        if(this.aptitudes[i].clasificacion === 'HERRAMIENTAS'){
+          this.herramientas.push(this.aptitudes[i]);
+        }
+        else if(this.aptitudes[i].clasificacion === 'LENGUAJES'){
+          this.lenguajes.push(this.aptitudes[i]);
+        }
+        else if(this.aptitudes[i].clasificacion === 'SISTEMAS OPERATIVOS'){
+          this.sistemaOperativo.push(this.aptitudes[i]);
+        }
+      }
+    });
+  }
+
+  obtenerAptitudes(){
+    this.aptitudes.ObtenerAptitudesS().subscribe(data => {
+      //console.log(data);
       this.aptitudes = data;
     });
   }
 
-  obtenerInformacion( aptitudes:any ): void {
-    for( var i=0; i< aptitudes.length; i++){
-        if( aptitudes.clasificacion.includes(aptitudes[i].clasificacion) ) {
-            this.relacion.set(aptitudes[i].nombre, aptitudes[i].clasificacion);
-        }
-        else{
-          this.clasificaciones.push(aptitudes[i].clasificacion);
-        }
-    }
+  /*--------------------------------------------------------------------------------------*/
+  agregarAptitud():void{
+    this.aptitudService.editarAptitudesS(this.nuevaAptitud).subscribe(data => {
+      this.nuevaAptitud = data;
+    });
   }
 
+  /*--------------------------------------------------------------------------------------*/
+  eliminarAptitud(aptitud:any):void{
+    if(confirm('Seguro que desea Eliminar este elemento?')){
+      this.aptitudService.eliminarAptitudesS(aptitud.id).subscribe((data) => {
+        this.clasificarAptitudes();
+      }), (error:any) => {console.log(error)};
+    }
+  }
 }

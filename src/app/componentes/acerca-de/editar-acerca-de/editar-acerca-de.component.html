@@ -1,0 +1,10 @@
+<h1> Editar Acerca de </h1>
+<form (ngSubmit)="editarAcercaDe()">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="acercaDePersona">Acerca de</label>
+            <input type="text" [(ngModel)]="persona.acercaDe" class="form-control" id="acercaDePersona" name="acercaDePersona">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Editar</button>
+</form>

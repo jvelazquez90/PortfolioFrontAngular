@@ -7,14 +7,83 @@
             </div>
             <div class="col-sm-4"></div>
             <div class="col-sm-4 alinear-texto">
-                <button type="button" class="btn btn-primary boton-editar" onclick="CambiarParrafo()"> Editar</button>
+                <a class="btn btn-success boton-agregar" href="agregarAptitud"> Agregar </a>
             </div>
         </div>
-        <div class="alinear-texto" *ngFor="let aptitud of aptitudes">
-            <h4> {{aptitud.clasificacion}}</h4>
-            <ul>
-                <li>{{aptitud.nombre}}</li>
-            </ul>
+        <div class="alinear-texto">
+            <h4> HERRAMIENTAS</h4>
+            <div>
+                <ul>
+                    <li *ngFor="let herramienta of herramientas">
+                        <p>{{herramienta.nombre}}
+                            <button 
+                                type="button" 
+                                class="btn btn-danger btn-sm boton-borrar"
+                                style="float: right;"
+                                (click)="eliminarAptitud(herramienta)"
+                                > 
+                                Borrar
+                            </button>
+                            <a  class="btn btn-primary btn-sm boton-editar" 
+                                style="float: right;"
+                                [routerLink]="['editarAptitud', herramienta.id]"
+                                >
+                                Editar 
+                            </a>
+                        </p>
+                    </li>    
+                </ul>
+            </div>
+        </div>
+        <div class="alinear-texto">
+            <h4> LENGUAJES</h4>
+            <div>
+                <ul>
+                    <li *ngFor="let lenguaje of lenguajes">
+                        <p>{{lenguaje.nombre}}
+                            <button 
+                                type="button" 
+                                class="btn btn-danger btn-sm boton-borrar"
+                                style="float: right;"
+                                (click)="eliminarAptitud(lenguaje)"
+                                > 
+                                Borrar
+                            </button>
+                            <a  class="btn btn-primary btn-sm boton-editar" 
+                                style="float: right;"
+                                [routerLink]="['editarAptitud', lenguaje.id]"
+                                >
+                                Editar 
+                            </a>
+                        </p>
+                    </li>    
+                </ul>
+            </div>
+        </div>
+        <div class="alinear-texto">
+            <h4> SISTEMAS OPERATIVO</h4>
+            <div>
+                <ul>
+                    <li *ngFor="let so of sistemaOperativo">
+                        <p>{{so.nombre}}
+                            <button 
+                                type="button" 
+                                class="btn btn-danger btn-sm boton-borrar"
+                                style="float: right;"
+                                (click)="eliminarAptitud(so)"
+                                > 
+                                Borrar
+                            </button>
+                            <a  class="btn btn-primary btn-sm boton-editar" 
+                                style="float: right;"
+                                [routerLink]="['editarAptitud', so.id]"
+                                >
+                                Editar 
+                            </a>
+                        </p>
+                    </li>    
+                </ul>
+            </div>
         </div>
     </div>
 </article>

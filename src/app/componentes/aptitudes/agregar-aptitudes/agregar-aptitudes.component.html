@@ -1,0 +1,19 @@
+<h1> Agregar Aptitud </h1>
+<form (ngSubmit)="crearAptitud()">
+    <div class="form-row">
+    <div class="form-group col-md-6">
+        <label for="nombreAptitud">Nombre</label>
+        <input type="string" [(ngModel)]="nombre" class="form-control" id="nombreAptitud" name="nombreAptitud">
+    </div>
+    <div class="form-group col-md-6">
+        <label for="clasificacionAptitud">Clasificacion:</label>
+        <select type="string" [(ngModel)]="clasificacion" class="form-control" id="clasificacionAptitud" name="clasificacionAptitud"
+            id="clasificacionAptitud">
+            <option value="HERRAMIENTAS">HERRAMIENTAS</option>
+            <option value="LENGUAJES">LENGUAJES</option>
+            <option value="SISTEMAS OPERATIVOS">SISTEMAS OPERATIVOS</option>
+        </select>
+    </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Editar</button>
+</form>
