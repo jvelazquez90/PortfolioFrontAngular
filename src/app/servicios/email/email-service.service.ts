@@ -2,17 +2,28 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'; // agregado
 import { BehaviorSubject, Observable } from 'rxjs'; // se agrega para que la aplicacion no quede en la espera del servicio
 import { map } from 'rxjs/operators';
+import { Email } from 'src/app/model/email';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmailServiceService {
 
-  url = "http://localhost:8080/email/obtener/1";
+  url = "http://localhost:8080/email";
+
+  personaId = 1;
 
   constructor(private httpClient:HttpClient) { }
 
-  ObtenerEmail():Observable<any>{
-    return this.httpClient.get(this.url);
+  obtenerEmail():Observable<any>{
+    return this.httpClient.get(this.url + "/obtener/" + this.personaId);
+  }
+
+  obtenerEmailIdS(id: any):Observable<any>{
+    return this.httpClient.get(this.url + "/obtener/" + id);
+  }
+
+  editarEmailS(email: Email): Observable<any>{
+    return this.httpClient.put(this.url + '/editar/' + email.id, email);
   }
 }

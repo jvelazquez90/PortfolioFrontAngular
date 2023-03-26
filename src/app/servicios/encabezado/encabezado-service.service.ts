@@ -29,10 +29,6 @@ export class EncabezadoServiceService {
     return this.httpClient.put(this.url + '/editar/' + persona.id, persona);
   }
 
-  eliminarPersonaS(id: number): Observable<any>{
-    return this.httpClient.delete(this.url + '/borrar/' + id);
-  }
-
   //----------------------------------------------------------------------------------------
   // objeto para el modal. el signo peso se usa para decir que es un observable
   $modal = new EventEmitter<any>();

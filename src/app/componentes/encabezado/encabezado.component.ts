@@ -26,10 +26,6 @@ export class EncabezadoComponent implements OnInit {
     // me suscribo al servicio
   }
 
-  convertirFecha(){
-    
-  }
-
     /*
   openModal() {
     this.modalSwitch = true;

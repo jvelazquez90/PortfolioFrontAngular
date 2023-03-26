@@ -24,9 +24,8 @@ export class InformacionPersonalComponent implements OnInit {
       this.informacionPersonal = data;
     });
 
-    this.emailPortfolio.ObtenerEmail().subscribe(data => {
+    this.emailPortfolio.obtenerEmail().subscribe(data => {
       this.email = data;
     });
-    
   }
 }
