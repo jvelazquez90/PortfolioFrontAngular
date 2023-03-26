@@ -1,0 +1,14 @@
+<h1> Editar Educación </h1>
+<form (ngSubmit)="editarEncabezado()">
+    <div class="form-row">
+    <div class="form-group col-md-6">
+        <label for="nombreEncabezado">Nombre</label>
+        <input type="string" [(ngModel)]="persona.nombre" class="form-control" id="nombreEncabezado" name="nombreEncabezado" placeholder="Nombre">
+    </div>
+    <div class="form-group col-md-6">
+        <label for="apellidoEncabezado">Apellido</label>
+        <input type="string" [(ngModel)]="persona.apellido" class="form-control" id="apellidoEncabezado" name="apellidoEncabezado" placeholder="Apellido">
+    </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Editar</button>
+</form>

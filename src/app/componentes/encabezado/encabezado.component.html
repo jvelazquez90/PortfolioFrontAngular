@@ -10,10 +10,20 @@
             <img src="assets/foto-perfil.jpg" class="rounded-circle" width="200px" height="200px" alt="Foto de perfil">
         </div>
     </div>
+    <div class="col-sm-4 alinear-texto"></div>
+    <a  class="btn btn-primary btn-sm boton-editar" 
+        style="float: right;"
+        [routerLink]="['editarEncabezado',miPortfolio?.id]"
+    >
+        Editar 
+    </a>
+    <div>
     <div>
         <h1 style="padding: 20px;"> {{miPortfolio?.nombre}} {{miPortfolio?.apellido}}</h1>
     </div>
-    <div>
-        <h2> Técnico GIS</h2>
+        <h2> {{titulo}} </h2>
+    </div>
+    <div *ngIf="modalSwitch == true">
+        <app-editar-encabezado></app-editar-encabezado>
     </div>
 </div>
