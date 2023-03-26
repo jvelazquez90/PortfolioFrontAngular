@@ -2,8 +2,13 @@
 <form (ngSubmit)="agregarExperiencia()">
     <div class="form-row">
       <div class="form-group col-md-6">
-        <label for="nombreEmpresa">Nombre institución</label>
-        <input type="string" [(ngModel)]="nombreEmpresa" class="form-control" id="nombreEmpresa" name="nombreEmpresa" placeholder="Nombre Empresa">
+        <label for="nombreIntitucionExperiencia">Nombre institución</label>
+        <input  type="string" 
+                [(ngModel)]="nombreEmpresa" 
+                class="form-control" 
+                id="nombreIntitucionExperiencia" 
+                name="nombreIntitucionExperiencia" 
+                placeholder="Nombre de la Institución">
       </div>
       <div class="form-group col-md-6">
         <label for="cargoExperiencia">Cargo</label>
@@ -11,11 +16,11 @@
       </div>
       <div class="form-group col-md-6">
         <label for="inputFechaIngresoExperiencia">Fecha de Egreso</label>
-        <input type="date" [(ngModel)]="fechaIngreso" class="form-control" id="inputFechaIngresoExperiencia" name="inputFechaIngresoExperiencia" placeholder="Fecha Ingreso">
+        <input type="date" [(ngModel)]="fechaIngreso" class="form-control" id="inputFechaIngresoExperiencia" name="inputFechaIngresoExperiencia" placeholder="Fecha de Ingreso">
       </div>
       <div class="form-group col-md-6">
         <label for="inputFechaEgresoExperiencia">Fecha de Egreso</label>
-        <input type="date" [(ngModel)]="fechaEgreso" class="form-control" id="fechaEgresoExperiencia" name="fechaEgresoExperiencia" placeholder="fechaEgresoExperiencia">
+        <input type="date" [(ngModel)]="fechaEgreso" class="form-control" id="fechaEgresoExperiencia" name="fechaEgresoExperiencia" placeholder="fecha de Egreso">
       </div>
       <div class="form-group col-md-6">
         <label for="imagenExperiencia">Ingresar logo</label>
