@@ -8,8 +8,8 @@ import { EducacionService } from 'src/app/servicios/educacion/educacion.service'
 })
 export class EducacionComponent implements OnInit {
 
-  educacion:any;
-  nuevaEducacion:any;
+  educacion: any;
+  nuevaEducacion: any;
 
   constructor( private datosEducacion:EducacionService) { }
 
@@ -20,6 +20,7 @@ export class EducacionComponent implements OnInit {
     });
   }
 
+  /*--------------------------------------------------------------------------------------*/
   ObtenerEducacion(){
     this.datosEducacion.ObtenerEducacion().subscribe(data => {
       //console.log(data);
@@ -27,20 +28,23 @@ export class EducacionComponent implements OnInit {
     });
   }
 
+  /*--------------------------------------------------------------------------------------*/
   agregarEducacion():void{
     this.datosEducacion.editarEducacion(this.nuevaEducacion).subscribe(data => {
       this.datosEducacion = data;
     });
   }
 
+  /*--------------------------------------------------------------------------------------*/
   editarEducacion(edu:any):void{
   }
 
-    eliminarEducacion(edu:any):void{
-      if(confirm('Seguro que desea Eliminar este elemento?')){
-        this.datosEducacion.eliminarEducacion(edu.id).subscribe((data) => {
-          this.ObtenerEducacion();
-        }), (error:any) => {console.log(error)};
-      }
+  /*--------------------------------------------------------------------------------------*/
+  eliminarEducacion(edu:any):void{
+    if(confirm('Seguro que desea Eliminar este elemento?')){
+      this.datosEducacion.eliminarEducacion(edu.id).subscribe((data) => {
+        this.ObtenerEducacion();
+      }), (error:any) => {console.log(error)};
     }
+  }
 }
