@@ -1,0 +1,59 @@
+<h1> Agregar nueva Experiencia </h1>
+<form (ngSubmit)="editarExperiencia()">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="nombreEmpresa">Nombre institución</label>
+        <input type="string" [(ngModel)]="experiencia.nombreEmpresa" class="form-control" id="nombreEmpresa" name="nombreEmpresa" placeholder="Nombre Empresa">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="cargoExperiencia">Cargo</label>
+        <input type="string" [(ngModel)]="experiencia.cargo"  class="form-control" id="cargoExperiencia" name="cargoExperiencia" placeholder="Cargo">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputFechaIngresoExperiencia">Fecha de Egreso</label>
+        <input type="date" [(ngModel)]="experiencia.fechaIngreso" class="form-control" id="inputFechaIngresoExperiencia" name="inputFechaIngresoExperiencia" placeholder="Fecha Ingreso">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputFechaEgresoExperiencia">Fecha de Egreso</label>
+        <input type="date" [(ngModel)]="experiencia.fechaEgreso" class="form-control" id="fechaEgresoExperiencia" name="fechaEgresoExperiencia" placeholder="fechaEgresoExperiencia">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="imagenExperiencia">Ingresar logo</label>
+        <input  type="file" 
+                accept="image/png, image/jpeg"
+                [(ngModel)]="experiencia.imagen" 
+                class="form-control" 
+                id="imagenExperiencia" 
+                name="imagenExperiencia"
+        >
+      </div>
+      <div class="form-group col-md-6">
+        <div>
+            <label for="esTrabajoActualExperiencia">¿Es trabajo actual?</label>
+        </div>
+        <input type="radio" 
+            checked 
+            [(ngModel)]="experiencia.esTrabajoActual"
+            name="esTrabajoActualExperiencia" 
+            id="nuevo"
+        /> 
+        <label for="nuevo">Si</label>
+        <input type="radio"
+            [(ngModel)]="experiencia.esTrabajoActual"
+            name="esTrabajoActualExperiencia" 
+            id="usado"
+        /> 
+        <label for="usado">No</label>
+    </div>
+      <div class="form-group col-md-6">
+        <label for="descripcionExperiencia">Descripcion</label>
+        <textarea   type="text" 
+                    [(ngModel)]="experiencia.descripcion" 
+                    class="form-control" 
+                    id="descripcionExperiencia" 
+                    name="descripcionExperiencia"></textarea>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Agregar</button>
+  </form>
+
