@@ -1,8 +1,31 @@
 <footer>
-    <h2>Redes Sociales</h2>
+    <div>
+        <div class="row">
+            <div class="col-sm-4 alinear-texto">
+                <h2> Canales de Comunicación </h2>
+            </div>
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4 alinear-texto">
+                <a class="btn btn-success boton-agregar" href="agregarRedComunicacion"> Agregar </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4"></div>
     <ul>
         <li *ngFor="let red of redesSociales">
             <a href="{{red.link}}"><img src='{{red.imagen}}' class="redes-sociales"> </a>
+            <button type="button" 
+                class="col-sm-1 botones-en-linea alinear-texto btn btn-danger btn-sm boton-borrar"
+                style="float: right;"
+                (click)="eliminarRedSocial(red)"
+                >
+                Borrar
+            </button>
+            <a  class="col-sm-1 botones-en-linea alinear-texto btn btn-primary btn-sm boton-editar" 
+                style="float: right;"
+                [routerLink]="['editarRedComunicacion',red.id]">
+                Editar 
+            </a>
         </li>
     </ul>
     <h4> Copyright - Todos los derechos reservados </h4>

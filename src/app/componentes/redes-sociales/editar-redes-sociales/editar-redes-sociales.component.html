@@ -1,0 +1,27 @@
+<h1> Editar Canal de Comunicación </h1>
+<form (ngSubmit)="editarRedSocial()">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="nombreRedSocial">Nombre Red de comunicación</label>
+        <select name="nombreRedSocial" [(ngModel)]="redSoocial.nombre" id="nombreRedSocial" name="nombreRedSocial">
+            <option value="1">Discord</option>
+            <option value="2">Facebook</option>
+            <option value="3">GitHub</option>
+            <option value="4">Gmail</option>
+            <option value="5">Instagram</option>
+            <option value="6">LinkedIn</option>
+            <option value="7">Skype</option>
+            <option value="8">Team</option>
+            <option value="9">Telegram</option>
+            <option value="10">Twitter</option>
+            <option value="11">WhatApp</option>
+            <option value="12">Youtube</option>
+        </select>
+    </div>
+      <div class="form-group col-md-6">
+        <label for="linkRedSocial">Link de la red de Comunicación</label>
+        <input type="string" [(ngModel)]="redSoocial.link" class="form-control" id="linkRedSocial" name="linkRedSocial " placeholder="link">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Editar</button>
+  </form>

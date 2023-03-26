@@ -9,14 +9,35 @@ import { RedesSocialesService } from 'src/app/servicios/redes_sociales/redes-soc
 export class RedesSocialesComponent implements OnInit {
 
   redesSociales: any;
+  nuevaRedSocial: any;
 
   constructor( private respuesta:RedesSocialesService) { }
 
   ngOnInit(): void {
-    this.respuesta.ObtenerRedesSociales().subscribe(data => {
+    this.respuesta.ObtenerRedesSocialesS().subscribe(data => {
       //console.log(data);
       this.redesSociales = data;
     });
   }
 
+  /*--------------------------------------------------------------------------------------*/
+  ObtenerRedSocial(){
+    this.respuesta.ObtenerRedesSocialesS().subscribe(data => {
+      //console.log(data);
+      this.redesSociales = data;
+    });
+  }
+
+  /*--------------------------------------------------------------------------------------*/
+  
+  eliminarRedSocial(red:any):void{
+    if(confirm('Seguro que desea Eliminar este elemento?')){
+      this.respuesta.eliminarRedesSocialesS(red.id).subscribe((data) => {
+        this.ObtenerRedSocial();
+      }), (error:any) => {console.log(error)};
+    }
+  }
+  
+  
+  
 }
