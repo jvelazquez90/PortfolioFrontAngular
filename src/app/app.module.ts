@@ -20,8 +20,23 @@ import { LoginComponent } from './login/login.component';
 import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-sesion.component';
 import { PortfolioComponent } from './componentes/portfolio/portfolio.component';
 import { ReactiveFormsModule } from '@angular/forms';
+
+// agregar y editar componentes
 import { AgregarEducacionComponent } from './componentes/educacion/agregar-educacion/agregar-educacion.component';
 import { EditarEducacionComponent } from './componentes/educacion/editar-educacion/editar-educacion.component';
+import { AgregarProyectoComponent } from './componentes/proyectos/agregar-proyecto/agregar-proyecto.component';
+import { EditarProyectoComponent } from './componentes/proyectos/editar-proyecto/editar-proyecto.component';
+import { AgregarRedesSocialesComponent } from './componentes/redes-sociales/agregar-redes-sociales/agregar-redes-sociales.component';
+import { EditarRedesSocialesComponent } from './componentes/redes-sociales/editar-redes-sociales/editar-redes-sociales.component';
+import { EditarEncabezadoComponent } from './componentes/encabezado/editar-encabezado/editar-encabezado.component';
+import { AgregarExperienciaComponent } from './componentes/experiencia/agregar-experiencia/agregar-experiencia.component';
+import { EditarExperienciaComponent } from './componentes/experiencia/editar-experiencia/editar-experiencia.component';
+import { AgregarHabilidadComponent } from './componentes/habilidades/agregar-habilidad/agregar-habilidad.component';
+import { EditarHabilidadComponent } from './componentes/habilidades/editar-habilidad/editar-habilidad.component';
+import { EditarInformacionPersonalComponent } from './componentes/informacion-personal/editar-informacion-personal/editar-informacion-personal.component';
+import { EditarAcercaDeComponent } from './componentes/acerca-de/editar-acerca-de/editar-acerca-de.component';
+import { EditarAptitudesComponent } from './componentes/aptitudes/editar-aptitudes/editar-aptitudes.component';
+import { AgregarAptitudesComponent } from './componentes/aptitudes/agregar-aptitudes/agregar-aptitudes.component';
 
 import { FormsModule } from '@angular/forms';
 
@@ -34,7 +49,22 @@ const routes: Routes = [
   {path: '', redirectTo: 'iniciar-sesion', pathMatch: 'full'}, // lo que va a hacer es evaluar la ruta especificada
   {path: 'agregarEducacion', component: AgregarEducacionComponent},
   {path: 'portfolio/editarEducacion/:id', component: EditarEducacionComponent},
-  {path: 'educacion', component: EducacionComponent}
+  {path: 'educacion', component: EducacionComponent},
+  {path: 'agregarProyecto', component: AgregarProyectoComponent},
+  {path: 'proyecto', component: ProyectosComponent},
+  {path: 'portfolio/editarProyecto/:id', component: EditarProyectoComponent},
+  {path: 'agregarRedComunicacion', component: AgregarRedesSocialesComponent},
+  {path: 'portfolio/editarRedComunicacion/:id', component: EditarRedesSocialesComponent},
+  {path: 'agregarExperiencia', component: AgregarExperienciaComponent},
+  {path: 'portfolio/editarExperiencia/:id', component: EditarExperienciaComponent},
+  {path: 'agregarHabilidad', component: AgregarHabilidadComponent},
+  {path: 'portfolio/editarHabilidad/:id', component: EditarHabilidadComponent},
+  {path: 'portfolio/editarEncabezado/:id', component: EditarEncabezadoComponent},
+  {path: 'portfolio/editarInformacionPersonal/:id', component: EditarInformacionPersonalComponent},
+  {path: 'portfolio/editarAcercaDe/:id', component: EditarAcercaDeComponent},
+  {path: 'agregarAptitud', component: AgregarAptitudesComponent},
+  {path: 'portfolio/editarAptitud/:id', component: EditarAptitudesComponent}
+  
 ];
 
 @NgModule({
@@ -55,7 +85,20 @@ const routes: Routes = [
     IniciarSesionComponent,
     PortfolioComponent,
     AgregarEducacionComponent,
-    EditarEducacionComponent
+    EditarEducacionComponent,
+    EditarEncabezadoComponent,
+    AgregarProyectoComponent,
+    EditarProyectoComponent ,
+    AgregarRedesSocialesComponent,
+    EditarRedesSocialesComponent,
+    AgregarExperienciaComponent,
+    EditarExperienciaComponent,
+    AgregarHabilidadComponent,
+    EditarHabilidadComponent,
+    EditarInformacionPersonalComponent,
+    EditarAcercaDeComponent,
+    EditarAptitudesComponent,
+    AgregarAptitudesComponent
   ],
   imports: [
     BrowserModule,
