@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { EducacionService } from 'src/app/servicios/educacion/educacion.service';
 
 @Component({
@@ -10,6 +10,10 @@ export class EducacionComponent implements OnInit {
 
   educacion: any;
   nuevaEducacion: any;
+
+  // habilitar/ocultar edicion
+  mostrar: Boolean = false;
+  @Input() sePuedeEditar: Boolean = false;
 
   constructor( private datosEducacion:EducacionService) { }
 

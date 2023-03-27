@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { EncabezadoServiceService } from 'src/app/servicios/encabezado/encabezado-service.service';
 
 @Component({
@@ -9,6 +9,10 @@ import { EncabezadoServiceService } from 'src/app/servicios/encabezado/encabezad
 export class AcercaDeComponent implements OnInit {
 
   informacionPersonal:any;
+
+  // habilitar/ocultar edicion
+  mostrar: Boolean = false;
+  @Input() sePuedeEditar: Boolean = false;
 
   constructor(private datosPortfolio:EncabezadoServiceService) { }
 

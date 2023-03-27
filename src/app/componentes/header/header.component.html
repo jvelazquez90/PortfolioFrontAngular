@@ -5,9 +5,12 @@
           <div class="collapse navbar-collapse" id="mynavbar">
             <ul class="navbar-nav me-auto">
             </ul>
-            <form class="d-flex">
-              <button class="btn btn-primary" type="button">Editar</button>
-            </form>
+            <div *ngIf="mostrar == false" style="padding-right: 5px;">
+              <button (click)="comenzarEdicion()" class="btn btn-primary btn-sm" type="button">Comenzar Edición</button>
+            </div>
+            <div>
+              <button (click)="terminarEdicion()" class="btn btn-danger btn-sm" type="button">Terminar Edición</button>
+            </div>
           </div>
         </div>
       </nav>

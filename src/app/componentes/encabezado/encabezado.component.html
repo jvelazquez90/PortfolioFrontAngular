@@ -10,14 +10,17 @@
             <img src="assets/foto-perfil.jpg" class="rounded-circle" width="200px" height="200px" alt="Foto de perfil">
         </div>
     </div>
-    <div class="col-sm-4 alinear-texto"></div>
-    <a  class="btn btn-primary btn-sm boton-editar" 
+    <div>
+    <div *ngIf="sePuedeEditar">
+        <div class="col-sm-4 alinear-texto"></div>
+        <a  class="btn btn-primary boton-editar" 
         style="float: right;"
         [routerLink]="['editarEncabezado',miPortfolio?.id]"
-    >
+        >
         Editar 
-    </a>
+        </a>
     <div>
+    </div>
     <div>
         <h1 style="padding: 20px;"> {{miPortfolio?.nombre}} {{miPortfolio?.apellido}}</h1>
     </div>

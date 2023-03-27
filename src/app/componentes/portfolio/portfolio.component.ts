@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortfolioComponent implements OnInit {
 
+  mostrar: Boolean = false;
+  
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  getCambiarValor(e) {
+    this.mostrar = e;
+  }
+
+  getCambiarValorOcultar(e) {
+    this.mostrar = e;
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ExperienciaService } from 'src/app/servicios/experiencia/experiencia.service';
 
 @Component({
@@ -10,6 +10,10 @@ export class ExperienciaComponent implements OnInit {
 
   experiencia:any;
   nuevaExperiencia: any;
+
+  // habilitar/ocultar edicion
+  mostrar: Boolean = false;
+  @Input() sePuedeEditar: Boolean = false;
 
   constructor( private datosExperiencia:ExperienciaService) { }
 

@@ -5,7 +5,7 @@
             <div class="col-sm-4 alinear-texto">
                 <h2> Habilidades </h2>
             </div>
-            <div>
+            <div *ngIf="sePuedeEditar">
                 <a class="col-sm-1 botones-en-linea alinear-texto btn btn-success btn-sm boton-editar"
                 style="float: right;" 
                 href="agregarHabilidad">
@@ -29,19 +29,20 @@
                 >
                 </circle-progress>
                 </div>
-                
-                <button type="button" 
+                <div *ngIf="sePuedeEditar">
+                    <button type="button" 
                         class="col-sm-1 botones-en-linea alinear-texto btn btn-danger btn-sm boton-borrar"
                         style="float: right;"
                         (click)="eliminarHabilidad(hab)"
                         >
                         Borrar
-                </button>
-                <a  class="col-sm-1 botones-en-linea alinear-texto btn btn-primary btn-sm boton-editar" 
+                    </button>
+                    <a  class="col-sm-1 botones-en-linea alinear-texto btn btn-primary btn-sm boton-editar" 
                         style="float: right;"
                         [routerLink]="['editarHabilidad',hab.id]">
                         Editar 
-                </a>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

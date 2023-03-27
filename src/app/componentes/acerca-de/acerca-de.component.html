@@ -7,15 +7,12 @@
             </div>
             <div class="col-sm-3"></div>
             <div class="col-sm-3"></div>
-            <div class="col-sm-3 alinear-texto">
-                <a class="btn btn-primary boton-editar" href=""> Editar </a>
+            <div class="col-sm-3 alinear-texto" *ngIf="sePuedeEditar">
+                <a class="btn btn-primary boton-editar" [routerLink]="['editarAcercaDe',informacionPersonal?.id]"> Editar </a>
             </div>
         </div>
         <div  class="alinear-texto">
             <p id="texto-acerca-de"> {{informacionPersonal?.acercaDe}}</p>
         </div>
-    </div>
-    <div>
-        <input id="edit-acerca-de" type="text" oninput="myFunctions2(this.value)" style="display:none">
     </div>
 </article>

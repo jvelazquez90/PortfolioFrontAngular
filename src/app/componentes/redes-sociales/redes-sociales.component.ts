@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { RedesSocialesService } from 'src/app/servicios/redes_sociales/redes-sociales.service';
 
 @Component({
@@ -10,6 +10,10 @@ export class RedesSocialesComponent implements OnInit {
 
   redesSociales: any;
   nuevaRedSocial: any;
+
+  // habilitar/ocultar edicion
+  mostrar: Boolean = false;
+  @Input() sePuedeEditar: Boolean = false;
 
   constructor( private respuesta:RedesSocialesService) { }
 

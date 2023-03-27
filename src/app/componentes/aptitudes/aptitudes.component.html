@@ -6,7 +6,7 @@
                 <h2> Aptitudes </h2>
             </div>
             <div class="col-sm-4"></div>
-            <div class="col-sm-4 alinear-texto">
+            <div class="col-sm-4 alinear-texto" *ngIf="sePuedeEditar">
                 <a class="btn btn-success boton-agregar" href="agregarAptitud"> Agregar </a>
             </div>
         </div>
@@ -15,8 +15,8 @@
             <div>
                 <ul>
                     <li *ngFor="let herramienta of herramientas">
-                        <p>{{herramienta.nombre}}
-                            <button 
+                        <p>{{herramienta.nombre}}   
+                            <button *ngIf="sePuedeEditar"
                                 type="button" 
                                 class="btn btn-danger btn-sm boton-borrar"
                                 style="float: right;"
@@ -24,7 +24,8 @@
                                 > 
                                 Borrar
                             </button>
-                            <a  class="btn btn-primary btn-sm boton-editar" 
+                            <a  *ngIf="sePuedeEditar"
+                                class="btn btn-primary btn-sm boton-editar" 
                                 style="float: right;"
                                 [routerLink]="['editarAptitud', herramienta.id]"
                                 >
@@ -41,7 +42,7 @@
                 <ul>
                     <li *ngFor="let lenguaje of lenguajes">
                         <p>{{lenguaje.nombre}}
-                            <button 
+                            <button *ngIf="sePuedeEditar"
                                 type="button" 
                                 class="btn btn-danger btn-sm boton-borrar"
                                 style="float: right;"
@@ -49,7 +50,8 @@
                                 > 
                                 Borrar
                             </button>
-                            <a  class="btn btn-primary btn-sm boton-editar" 
+                            <a  *ngIf="sePuedeEditar"
+                                class="btn btn-primary btn-sm boton-editar" 
                                 style="float: right;"
                                 [routerLink]="['editarAptitud', lenguaje.id]"
                                 >
@@ -66,7 +68,7 @@
                 <ul>
                     <li *ngFor="let so of sistemaOperativo">
                         <p>{{so.nombre}}
-                            <button 
+                            <button *ngIf="sePuedeEditar"
                                 type="button" 
                                 class="btn btn-danger btn-sm boton-borrar"
                                 style="float: right;"
@@ -74,7 +76,8 @@
                                 > 
                                 Borrar
                             </button>
-                            <a  class="btn btn-primary btn-sm boton-editar" 
+                            <a  *ngIf="sePuedeEditar"
+                                class="btn btn-primary btn-sm boton-editar" 
                                 style="float: right;"
                                 [routerLink]="['editarAptitud', so.id]"
                                 >

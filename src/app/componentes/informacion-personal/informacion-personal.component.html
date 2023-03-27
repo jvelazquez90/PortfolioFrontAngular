@@ -5,7 +5,7 @@
             <h2> Información personal </h2>
         </div>
         <div class="col-sm-4"></div>
-        <div class="col-sm-4 alinear-texto">
+        <div class="col-sm-4 alinear-texto" *ngIf="sePuedeEditar">
             <a class="btn btn-primary boton-editar" [routerLink]="['editarInformacionPersonal',informacionPersonal?.id]"> Editar </a>
         </div>
     </div>

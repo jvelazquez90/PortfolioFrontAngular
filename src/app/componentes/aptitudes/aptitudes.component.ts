@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Aptitudes } from 'src/app/model/aptitudes';
 import { AptitudesService } from 'src/app/servicios/aptitudes/aptitudes.service';
 
@@ -18,6 +18,10 @@ export class AptitudesComponent implements OnInit {
   herramientas: Array<any> = [];
   lenguajes: Array<any> = [];
   sistemaOperativo: Array<any> = [];
+
+  // habilitar/ocultar edicion
+  mostrar: Boolean = false;
+  @Input() sePuedeEditar: Boolean = false;
 
   constructor( private aptitudService: AptitudesService) { }
 

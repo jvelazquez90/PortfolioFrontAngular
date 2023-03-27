@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ProyectosService } from 'src/app/servicios/proyectos/proyectos.service';
 
 @Component({
@@ -10,6 +10,10 @@ export class ProyectosComponent implements OnInit {
 
   proyectos:any;
   nuevoProyecto:any;
+
+  // habilitar/ocultar edicion
+  mostrar: Boolean = false;
+  @Input() sePuedeEditar: Boolean = false;
 
   constructor( private proyectosService:ProyectosService ) { }
 

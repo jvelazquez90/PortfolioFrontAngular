@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { EncabezadoServiceService } from 'src/app/servicios/encabezado/encabezado-service.service';
 import { EmailServiceService } from 'src/app/servicios/email/email-service.service';
 
@@ -13,6 +13,10 @@ export class InformacionPersonalComponent implements OnInit {
 
   informacionPersonal:any;
   email:any;
+
+  // habilitar/ocultar edicion
+  mostrar: Boolean = false;
+  @Input() sePuedeEditar: Boolean = false;
 
   constructor(private datosPortfolio:EncabezadoServiceService,
               private emailPortfolio:EmailServiceService,

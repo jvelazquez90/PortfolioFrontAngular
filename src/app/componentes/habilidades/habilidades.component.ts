@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HabilidadesService } from 'src/app/servicios/habilidades/habilidades.service';
 
 @Component({
@@ -10,6 +10,10 @@ export class HabilidadesComponent implements OnInit {
 
   habilidades:any;
   nuevaHabilidad:any;
+
+  // habilitar/ocultar edicion
+  mostrar: Boolean = false;
+  @Input() sePuedeEditar: Boolean = false;
 
   constructor( private datosHabilidades:HabilidadesService ) { }
 

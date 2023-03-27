@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 //import { PortfolioService } from 'src/app/servicios/portfolio.service'; // se agrega mi servicio
 import { EncabezadoServiceService } from 'src/app/servicios/encabezado/encabezado-service.service';
+import { EditableService } from 'src/app/servicios/editable/editable.service';
 
 @Component({
   selector: 'app-encabezado',
@@ -12,10 +13,14 @@ export class EncabezadoComponent implements OnInit {
   miPortfolio:any;
   titulo = "Técnico GIS";
 
+  @Input() sePuedeEditar: Boolean = false;
+
+
   // empieza modal
   modalSwitch: boolean = false;
 
-  constructor(private datosPortfolio:EncabezadoServiceService, private modalSS:EncabezadoServiceService) { }
+  constructor(private datosPortfolio:EncabezadoServiceService, private modalSS:EncabezadoServiceService,
+            private datosEditable:EditableService) { }
 
   ngOnInit(): void {
     this.datosPortfolio.ObtenerPersona().subscribe(data => {

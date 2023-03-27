@@ -6,7 +6,7 @@
                 <h2> Educación </h2>
             </div>
             <div class="col-sm-4"></div>
-            <div class="col-sm-4 alinear-texto">
+            <div class="col-sm-4 alinear-texto" *ngIf="sePuedeEditar">
                 <a class="btn btn-success boton-agregar" href="agregarEducacion"> Agregar </a>
             </div>
         </div>
@@ -14,13 +14,15 @@
             <ul>
                 <li *ngFor="let edu of educacion">
                     <p> {{edu.nombreInstitucion}} 
-                        <button type="button" 
+                        <button *ngIf="sePuedeEditar" 
+                            type="button" 
                             class="btn btn-danger btn-sm boton-borrar"
                             style="float: right;"
                             (click)="eliminarEducacion(edu)"> 
                             Borrar
                         </button>
-                        <a  class="btn btn-primary btn-sm boton-editar" 
+                        <a  *ngIf="sePuedeEditar"
+                            class="btn btn-primary btn-sm boton-editar" 
                             style="float: right;"
                             [routerLink]="['editarEducacion',edu.id]">
                              Editar 

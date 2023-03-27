@@ -7,7 +7,7 @@
             </div>
             <div class="col-sm-3"></div>
             <div class="col-sm-3"></div>
-            <div class="col-sm-3 alinear-texto">
+            <div class="col-sm-3 alinear-texto" *ngIf="sePuedeEditar">
                 <a class="btn btn-success boton-agregar" href="agregarExperiencia"> Agregar </a>
             </div>
         </div>
@@ -21,19 +21,21 @@
                     </div>
                     <div class="col-sm-6 p-3">
                         <img [src]="exp.imagen" class="logo-unigis float-start">
-                        <button type="button" 
-                            class="btn btn-danger btn-sm boton-borrar"
-                            style="float: right;"
-                            (click)="eliminarExperiencia(exp)"
-                            > 
-                            Borrar
-                        </button>
-                        <a  class="btn btn-primary btn-sm boton-editar" 
-                            style="float: right;"
-                            [routerLink]="['editarExperiencia',exp.id]"
-                            >
-                             Editar 
-                        </a>
+                        <div *ngIf="sePuedeEditar">
+                            <button type="button" 
+                                class="btn btn-danger btn-sm boton-borrar"
+                                style="float: right;"
+                                (click)="eliminarExperiencia(exp)"
+                                > 
+                                Borrar
+                            </button>
+                            <a  class="btn btn-primary btn-sm boton-editar" 
+                                style="float: right;"
+                                [routerLink]="['editarExperiencia',exp.id]"
+                                >
+                                Editar 
+                            </a>
+                        </div>
                     </div>
                 </div>
             </li>

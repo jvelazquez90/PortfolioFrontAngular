@@ -1,11 +1,12 @@
-<app-header></app-header>
-<app-encabezado></app-encabezado>
-<app-informacion-personal></app-informacion-personal>
-<app-acerca-de></app-acerca-de>
-<app-experiencia></app-experiencia>
-<app-aptitudes></app-aptitudes>
-<app-educacion></app-educacion>
-<app-habilidades></app-habilidades>
-<app-proyectos></app-proyectos>
-<app-ubicacion></app-ubicacion>
-<app-redes-sociales></app-redes-sociales>
+<app-header (cambiarValorMostrar) = "getCambiarValor($event)"
+            (cambiarValorOcultar) = "getCambiarValorOcultar($event)"></app-header>
+<app-encabezado [sePuedeEditar]="mostrar"></app-encabezado>
+<app-informacion-personal [sePuedeEditar]="mostrar"></app-informacion-personal>
+<app-acerca-de [sePuedeEditar]="mostrar"></app-acerca-de>
+<app-experiencia [sePuedeEditar]="mostrar"></app-experiencia>
+<app-aptitudes [sePuedeEditar]="mostrar"></app-aptitudes>
+<app-educacion [sePuedeEditar]="mostrar"></app-educacion>
+<app-habilidades [sePuedeEditar]="mostrar"></app-habilidades>
+<app-proyectos [sePuedeEditar]="mostrar"></app-proyectos>
+<app-ubicacion [sePuedeEditar]="mostrar"></app-ubicacion>
+<app-redes-sociales [sePuedeEditar]="mostrar"></app-redes-sociales>
