@@ -161,3 +161,7 @@ header-a-probar{
     float: right;
     margin-top: 5px;
   }
+
+  .botones-en-linea {
+    padding: 5px 10px 5px 10px;
+}
