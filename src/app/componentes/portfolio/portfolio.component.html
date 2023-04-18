@@ -1,5 +1,7 @@
-<app-header (cambiarValorMostrar) = "getCambiarValor($event)"
-            (cambiarValorOcultar) = "getCambiarValorOcultar($event)"></app-header>
+<app-header 
+    (cambiarValorMostrar) = "getCambiarValor($event)"
+    (cambiarValorOcultar) = "getCambiarValorOcultar($event)">
+</app-header>
 <app-encabezado [sePuedeEditar]="mostrar"></app-encabezado>
 <app-informacion-personal [sePuedeEditar]="mostrar"></app-informacion-personal>
 <app-acerca-de [sePuedeEditar]="mostrar"></app-acerca-de>

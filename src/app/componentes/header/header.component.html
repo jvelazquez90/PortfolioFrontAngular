@@ -5,12 +5,15 @@
           <div class="collapse navbar-collapse" id="mynavbar">
             <ul class="navbar-nav me-auto">
             </ul>
-            <div *ngIf="mostrar == false" style="padding-right: 5px;">
+            <ng-container *ngIf="mostrar == false; else elseIf">
               <button (click)="comenzarEdicion()" class="btn btn-primary btn-sm" type="button">Comenzar Edición</button>
-            </div>
-            <div>
-              <button (click)="terminarEdicion()" class="btn btn-danger btn-sm" type="button">Terminar Edición</button>
-            </div>
+            </ng-container>
+            <ng-template #elseIf>
+              <ng-container *ngIf="mostrar == true">
+                <button (click)="terminarEdicion()" class="btn btn-danger btn-sm" type="button">Terminar Edición</button>
+              </ng-container>
+            </ng-template>
+            <button (click) = "cerrarSesion()" type="button" class="btn-sm btn-secondary" style="margin-left: 10px;"> Cerrar Sesión </button>
           </div>
         </div>
       </nav>
