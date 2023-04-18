@@ -10,23 +10,18 @@
             <img src="assets/foto-perfil.jpg" class="rounded-circle" width="200px" height="200px" alt="Foto de perfil">
         </div>
     </div>
-    <div>
-    <div *ngIf="sePuedeEditar">
-        <div class="col-sm-4 alinear-texto"></div>
-        <a  class="btn btn-primary boton-editar" 
-        style="float: right;"
-        [routerLink]="['editarEncabezado',miPortfolio?.id]"
-        >
-        Editar 
-        </a>
-    <div>
-    </div>
-    <div>
-        <h1 style="padding: 20px;"> {{miPortfolio?.nombre}} {{miPortfolio?.apellido}}</h1>
-    </div>
-        <h2> {{titulo}} </h2>
-    </div>
-    <div *ngIf="modalSwitch == true">
-        <app-editar-encabezado></app-editar-encabezado>
+    <div class="alinear-texto">
+        <div class="row">
+            <div class="col-sm-8"></div>
+            <div class="col-sm-4 alinear-texto" *ngIf="sePuedeEditar">
+                <a class="btn btn-primary boton-editar" [routerLink]="['editarEncabezado',miPortfolio?.id]"> Editar </a>
+            </div>
+        </div>
+        <div>
+            <h1 style="padding: 20px;"> {{miPortfolio?.nombre}} {{miPortfolio?.apellido}}</h1>
+        </div>
+        <div>
+            <h2> {{titulo}} </h2>
+        </div>
     </div>
 </div>
