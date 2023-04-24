@@ -21,6 +21,7 @@ export class EditarExperienciaComponent implements OnInit {
     const id = this.activateRoute.snapshot.params['id'];
     this.datosExperiencia.obtenerExperienciaIdS(id).subscribe(data => {
       this.experiencia = data;
+      console.log(data);
     }, error => {
       alert("Error al modificar");
       this.router.navigate(['portfolio']);

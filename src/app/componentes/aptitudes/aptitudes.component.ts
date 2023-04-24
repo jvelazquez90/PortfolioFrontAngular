@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Aptitudes } from 'src/app/model/aptitudes';
 import { AptitudesService } from 'src/app/servicios/aptitudes/aptitudes.service';
+import { LoginService } from 'src/app/servicios/login/login.service';
 
 @Component({
   selector: 'app-aptitudes',
@@ -23,7 +24,9 @@ export class AptitudesComponent implements OnInit {
   mostrar: Boolean = false;
   @Input() sePuedeEditar: Boolean = false;
 
-  constructor( private aptitudService: AptitudesService) { }
+  logueadoOn: boolean = false;
+
+  constructor( private aptitudService: AptitudesService,  private loginService: LoginService) { }
 
   ngOnInit(): void {
     this.aptitudService.ObtenerAptitudesS().subscribe(data => {
@@ -40,6 +43,13 @@ export class AptitudesComponent implements OnInit {
         }
       }
     });
+
+    this.loginService.logueado.subscribe(
+      {
+      next:(logueadoOn) => {
+        this.logueadoOn = logueadoOn;
+      }
+    })
   }
 
   /*--------------------------------------------------------------------------------------*/

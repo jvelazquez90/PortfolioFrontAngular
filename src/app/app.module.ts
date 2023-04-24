@@ -111,7 +111,7 @@ const routes: Routes = [
     // importo para el grafico
     NgCircleProgressModule.forRoot({})
   ],
-  providers: [],
+  providers: [IniciarSesionComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

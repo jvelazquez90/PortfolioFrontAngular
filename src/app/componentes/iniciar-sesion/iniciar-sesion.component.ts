@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { User } from 'src/app/model/user';
 import { LoginService } from 'src/app/servicios/login/login.service';
 import { Output, EventEmitter } from '@angular/core';
+import { BehaviorSubject, Observable, catchError, tap, throwError } from 'rxjs';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-iniciar-sesion',
@@ -15,7 +17,7 @@ export class IniciarSesionComponent implements OnInit {
   //form:FormGroup; // vamos a enlazar con nuestro template
 
   user: User = new User();
-  @Output() cambiarValorLogueado = new EventEmitter<Boolean>();
+  errors: string = "El usuario o la contraseña son inválidos";
 
   constructor(private loginService: LoginService, private router:Router) {
     
@@ -23,11 +25,19 @@ export class IniciarSesionComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  /*
   userLogin() {
     this.loginService.loginUser(this.user).subscribe(data=>{
       window.location.href = "/portfolio"
     }, error => alert("El usuario o la contraseña son inválidos"));
-    this.cambiarValorLogueado.emit(true);
   }
+  */
+ 
+  userLogin() {
+    this.loginService.loginUser(this.user).subscribe(data=>{
+      this.router.navigate(['/portfolio'])
+    },
+    error => alert("El usuario o la contraseña son inválidos"))
+  }
+  
 }

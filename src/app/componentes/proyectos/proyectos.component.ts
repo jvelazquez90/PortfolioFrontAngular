@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ProyectosService } from 'src/app/servicios/proyectos/proyectos.service';
+import { LoginService } from 'src/app/servicios/login/login.service';
 
 @Component({
   selector: 'app-proyectos',
@@ -11,17 +12,26 @@ export class ProyectosComponent implements OnInit {
   proyectos:any;
   nuevoProyecto:any;
 
+  logueadoOn: boolean = false;
+
   // habilitar/ocultar edicion
   mostrar: Boolean = false;
   @Input() sePuedeEditar: Boolean = false;
 
-  constructor( private proyectosService:ProyectosService ) { }
+  constructor( private proyectosService:ProyectosService, private loginService: LoginService ) { }
 
   ngOnInit(): void {
     this.proyectosService.obtenerProyectos().subscribe(data => {
       //console.log(data);
       this.proyectos = data;
     });
+
+    this.loginService.logueado.subscribe(
+      {
+      next:(logueadoOn) => {
+        this.logueadoOn = logueadoOn;
+      }
+    })
   }
 
   /*--------------------------------------------------------------------------------------*/

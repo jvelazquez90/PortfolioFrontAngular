@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { EncabezadoServiceService } from 'src/app/servicios/encabezado/encabezado-service.service';
 import { EmailServiceService } from 'src/app/servicios/email/email-service.service';
+import { LoginService } from 'src/app/servicios/login/login.service';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -14,13 +15,16 @@ export class InformacionPersonalComponent implements OnInit {
   informacionPersonal:any;
   email:any;
 
+  logueadoOn: boolean = false;
+
   // habilitar/ocultar edicion
   mostrar: Boolean = false;
   @Input() sePuedeEditar: Boolean = false;
 
   constructor(private datosPortfolio:EncabezadoServiceService,
               private emailPortfolio:EmailServiceService,
-              public editarPersona: FormBuilder) { }
+              public editarPersona: FormBuilder,
+              private loginService: LoginService) { }
 
   ngOnInit(): void {
     this.datosPortfolio.ObtenerPersona().subscribe(data => {
@@ -31,5 +35,12 @@ export class InformacionPersonalComponent implements OnInit {
     this.emailPortfolio.obtenerEmail().subscribe(data => {
       this.email = data;
     });
+
+    this.loginService.logueado.subscribe(
+      {
+      next:(logueadoOn) => {
+        this.logueadoOn = logueadoOn;
+      }
+    })
   }
 }

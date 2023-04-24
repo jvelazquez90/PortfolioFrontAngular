@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { LoginService } from 'src/app/servicios/login/login.service';
 
 @Component({
   selector: 'app-ubicacion',
@@ -11,9 +12,17 @@ export class UbicacionComponent implements OnInit {
   mostrar: Boolean = false;
   @Input() sePuedeEditar: Boolean = false;
 
-  constructor() { }
+  logueadoOn: boolean = false;
+
+  constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
+    this.loginService.logueado.subscribe(
+      {
+      next:(logueadoOn) => {
+        this.logueadoOn = logueadoOn;
+      }
+    })
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ExperienciaService } from 'src/app/servicios/experiencia/experiencia.service';
+import { LoginService } from 'src/app/servicios/login/login.service';
 
 @Component({
   selector: 'app-experiencia',
@@ -11,17 +12,26 @@ export class ExperienciaComponent implements OnInit {
   experiencia:any;
   nuevaExperiencia: any;
 
+  logueadoOn: boolean = false;
+
   // habilitar/ocultar edicion
   mostrar: Boolean = false;
   @Input() sePuedeEditar: Boolean = false;
 
-  constructor( private datosExperiencia:ExperienciaService) { }
+  constructor( private datosExperiencia:ExperienciaService, private loginService: LoginService) { }
 
   ngOnInit(): void {
     this.datosExperiencia.ObtenerExperienciaS().subscribe(data => {
       //console.log(data);
       this.experiencia = data.reverse(); // invierte el orden, quedando el actual arriba de todo
     });
+
+    this.loginService.logueado.subscribe(
+      {
+      next:(logueadoOn) => {
+        this.logueadoOn = logueadoOn;
+      }
+    })
   }
 
   /*--------------------------------------------------------------------------------------*/

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { EducacionService } from 'src/app/servicios/educacion/educacion.service';
+import { LoginService } from 'src/app/servicios/login/login.service';
 
 @Component({
   selector: 'app-educacion',
@@ -15,13 +16,22 @@ export class EducacionComponent implements OnInit {
   mostrar: Boolean = false;
   @Input() sePuedeEditar: Boolean = false;
 
-  constructor( private datosEducacion:EducacionService) { }
+  logueadoOn: boolean = false;
+
+  constructor( private datosEducacion:EducacionService, private loginService: LoginService) { }
 
   ngOnInit(): void {
     this.datosEducacion.ObtenerEducacion().subscribe(data => {
       //console.log(data);
       this.educacion = data;
     });
+
+    this.loginService.logueado.subscribe(
+      {
+      next:(logueadoOn) => {
+        this.logueadoOn = logueadoOn;
+      }
+    })
   }
 
   /*--------------------------------------------------------------------------------------*/
