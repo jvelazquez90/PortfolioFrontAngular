@@ -9,7 +9,8 @@ import { Proyectos } from 'src/app/model/proyectos';
 })
 export class ProyectosService {
 
-  url = "http://localhost:8080/proyecto";
+  //url = "http://localhost:8080/proyecto";
+  url = "https://portfolioweb-44z6.onrender.com/proyecto";
 
   constructor(  private httpClient:HttpClient ) { }
 

@@ -11,7 +11,8 @@ import { Persona } from 'src/app/model/persona';
 })
 export class EncabezadoServiceService {
 
-  url = "http://localhost:8080/personas/";
+  //url = "http://localhost:8080/personas/";
+  url = "https://portfolioweb-44z6.onrender.com/personas/";
 
   constructor( private httpClient:HttpClient ) {}
 

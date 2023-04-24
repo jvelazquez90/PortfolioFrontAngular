@@ -9,7 +9,8 @@ import { RedesSociales } from 'src/app/model/redes-sociales';
 })
 export class RedesSocialesService {
 
-  url = "http://localhost:8080/redesSociales";
+  //url = "http://localhost:8080/redesSociales";
+  url = "https://portfolioweb-44z6.onrender.com/redesSociales";
 
   constructor( private httpClient:HttpClient ) { }
 

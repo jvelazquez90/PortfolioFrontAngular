@@ -9,7 +9,8 @@ import { Email } from 'src/app/model/email';
 })
 export class EmailServiceService {
 
-  url = "http://localhost:8080/email";
+  //url = "http://localhost:8080/email";
+  url = "https://portfolioweb-44z6.onrender.com/email";
 
   personaId = 1;
 

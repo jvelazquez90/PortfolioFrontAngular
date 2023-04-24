@@ -9,7 +9,8 @@ import { Aptitudes } from 'src/app/model/aptitudes';
 })
 export class AptitudesService {
 
-  url = "http://localhost:8080/aptitudes";
+  //url = "http://localhost:8080/aptitudes";
+  url = "https://portfolioweb-44z6.onrender.com/aptitudes";
 
   constructor( private httpClient:HttpClient ) { }
 
